@@ -1,0 +1,7 @@
+transformers==4.35.0   # arbitrary code execution via pickle deserialization
+requests==2.19.1       # CVE-2018-18074 - credential exposure via redirects
+Pillow==9.0.0          # multiple CVEs - buffer overflow, DOS
+numpy==1.21.0          # CVE-2021-33430 - buffer overflow
+django==3.2.0          # multiple CVEs - SQL injection, XSS
+flask==1.0.0           # CVE-2018-1000656 - DOS via large requests
+pandas==1.3.0         # CVE-2021-3177 - buffer overflow
