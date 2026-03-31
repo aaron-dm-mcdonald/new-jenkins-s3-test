@@ -14,7 +14,19 @@ pipeline {
             }
         }
 
-        stage('Snyk IaC Scan') {
+        stage('Snyk IaC Scan Test') {
+            steps {
+                snykSecurity(
+                    snykInstallation: 'snyk',
+                    snykTokenId: 'snyk-api-token',
+                    additionalArguments: '--iac --org=$SNYK_ORG --severity-threshold=high',
+                    failOnIssues: false,
+                    monitorProjectOnBuild: false
+                )
+            }
+        }
+
+        stage('Snyk IaC Scan Monitor') {
             steps {
                 snykSecurity(
                     snykInstallation: 'snyk',
